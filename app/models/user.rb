@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :post_images, dependent: :destroy
-
+  has_many :post_comments, dependent: :destroy
   has_one_attached :profile_image
 
 
@@ -17,6 +17,6 @@ class User < ApplicationRecord
     profile_image.variant(resize_to_limit: [width, height]).processed
   end
 
- 
+
 
 end
